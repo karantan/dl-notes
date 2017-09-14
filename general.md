@@ -35,3 +35,12 @@ The convolutional, pooling and ReLU layers act as learnable features extractors,
 Note that only the convolutional layers and fully-connected layers have weights. These weights are learned in the training phase.
 
 ![Example of an CNN Architecture](http://adilmoujahid.com/images/cnn-architecture.png)
+
+
+## What is Fully Connected Layer?
+
+The Fully Connected layer is a traditional Multi Layer Perceptron that uses a softmax activation function in the output layer (other classifiers like SVM can also be used). The term “Fully Connected” implies that every neuron in the previous layer is connected to every neuron on the next layer.
+
+![fully_connected_layer](https://user-images.githubusercontent.com/7062631/30430832-c6216010-995c-11e7-8a5d-d49dc825650c.png)
+
+Apart from classification, adding a fully-connected layer is also a (usually) cheap way of learning non-linear combinations of these features. Most of the features from convolutional and pooling layers may be good for the classification task, but combinations of those features might be even better.
