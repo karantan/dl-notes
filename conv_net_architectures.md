@@ -1,4 +1,4 @@
-# ConvNet Architectures
+# Convolutional Neural Networks Architectures
 
 Convolutional Neural Networks have been around since early 1990s.
 
