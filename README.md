@@ -10,3 +10,4 @@ My personal Deep Learning notes.
 - [Loss Functions](loss_functions.md)
 - [Optimizers](optimizers.md)
 - [Convolutional Neural Networks Architectures](conv_net_architectures.md)
+- [Q & A](questions_answers.md)
