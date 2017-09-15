@@ -44,3 +44,15 @@ The Fully Connected layer is a traditional Multi Layer Perceptron that uses a so
 ![fully_connected_layer](https://user-images.githubusercontent.com/7062631/30430832-c6216010-995c-11e7-8a5d-d49dc825650c.png)
 
 Apart from classification, adding a fully-connected layer is also a (usually) cheap way of learning non-linear combinations of these features. Most of the features from convolutional and pooling layers may be good for the classification task, but combinations of those features might be even better.
+
+## Why are images so often resized to 224 x 224?
+
+In conventional cases, images are resized so that all images have the same size. In AlexNet, for example, during CNN training, all images are resized to 227 × 227  (or 224 × 224 in VGGNet) before being fed into the network. During testing, images are typically resized to 227 × 227 for feature extraction and classification ([Good Practice in CNN Feature Transfer, 2016](https://arxiv.org/pdf/1604.00133.pdf)).
+
+## What is the difference between the Keras Functional API and the Sequential model?
+
+The Functional API was designed to make it easier to build neural network models that are non-sequential. You use the sequential model if your model is simple and basically just a sequence of layers, and you use the Functional API to make more complex models, which includes non-sequential connections and multiple inputs/outputs (Matias Valdenegro, 2016).
+
+I would add the recommendation to always use the functional form,even for purely sequential models. It is only slightly more verbose, and you can more easily adapt to multiple branches, inputs, or outputs. (David Menéndez Hurtado, 2016)
+
+New neural network architectures at this time are moving away from such pattern (Matias Valdenegro, 2017).
