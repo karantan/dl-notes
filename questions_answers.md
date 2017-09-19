@@ -68,3 +68,23 @@ Default padding depends on the border mode and the kernel size.
 Dropout is a regularization technique, which aims to reduce the complexity of the model with the goal to prevent overfitting.
 
 The dense layer is fully connected layer, so all the neurons in a layer are connected to those in a next layer. Dense layer is used (as far as I understand) to use the activation functions on the input. See [activation functions](activation_functions.md) for more into.
+
+
+## What is Data Augmentation?
+
+Simply put, data augmentation just alters each batch of our images. It does this through flipping, slightly changing hues, stretching, shearing, rotation, etc. and it does this in ways that make sense. By that we mean, it wouldn't make sense to vertically flip an image of a dog for generalization purposes.
+
+We want this to prevent model overfitting.
+
+_Tip: Keras allows you to implement data augmentation fairly easily by creating a data-augmentation batch generator._
+
+## What is Batch Normalization?
+
+It is another good standard approach to reducing overfitting.
+
+In general, the inputs to your neural network should always be normalized. Normalization **is a process where given a set of data, you subtract from each element the mean value for that data set and divide it by the data set's standard deviation**. By doing so, we put the input values onto the same "scale", in that all the values have been normalized into units of "# of standard deviations from the mean".
+
+By default, you should always include batch normalization, and all modern neural networks do so because:
+
+- Adding batchnorm to a model can result in 10x or more improvements in training speed.
+- Because normalization greatly reduces the ability of a small number of outlying inputs to over-influence the training, it also tends to reduce overfitting.

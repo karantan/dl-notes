@@ -8,3 +8,7 @@ In case of Max Pooling, we define a spatial neighborhood (for example, a 2×2 wi
 
 ![max-pooling](https://ujwlkarn.files.wordpress.com/2016/08/screen-shot-2016-08-10-at-3-38-39-am.png?w=988)
 
+Max Pooling example:
+
+![max-pooling](http://wiki.fast.ai/images/4/4f/Max_Pooling.png)
+

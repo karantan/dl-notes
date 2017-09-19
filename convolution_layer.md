@@ -24,3 +24,30 @@ In CNN terminology, the 3×3 matrix is called a ‘filter‘ or ‘kernel’ or 
 In the table below, we can see the effects of convolution of the image with different filters.
 
 ![convolved-images](https://ujwlkarn.files.wordpress.com/2016/08/screen-shot-2016-08-05-at-11-03-00-pm.png)
+
+
+Another example. If we take the first number (seven)
+
+![mnist-numbers](http://wiki.fast.ai/images/f/fd/Mnist.png)
+
+
+Apply these filters:
+
+![conv-filters](http://wiki.fast.ai/images/1/12/Filters1.png)
+
+We get the following result as an output:
+![conv-output](http://wiki.fast.ai/images/9/9a/Filtered_sevens.png)
+
+## How to decide which filters to use?
+
+We don't need to manually decide what filters work best at classifying our images, we can simply train a model to do so, using these filters as weights!
+
+For example, we can start with 8 randomly generated filters; that is 8 3x3 matrices with random elements. Given labeled inputs, we can then use [stochastic gradient descent](optimizers.md) to determine what the optimal values of these filters are, and therefore we allow the neural network to learn what things are most important to detect in classifying images.
+
+
+For more visualization examples check out this video: [Deep Visualization Toolbox](https://www.youtube.com/watch?v=AgkfIQ4IGaM).
+
+## Padding
+
+One thing we have neglected to mention is how these filters operate on the edge and corner pixels, given that the filter necessarily operates on the premise that there are 8 surrounding pixels. There is a variety of approaches to handling these edge/corner cases, but one of the most common and the one we'll use the most in this course is zero-padding. All zero-padding does is add a extra borders of zero pixels around the image prior to passing through a filter so that the output shape from the filter is the same as the input shape.
+
