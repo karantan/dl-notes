@@ -88,3 +88,18 @@ By default, you should always include batch normalization, and all modern neural
 
 - Adding batchnorm to a model can result in 10x or more improvements in training speed.
 - Because normalization greatly reduces the ability of a small number of outlying inputs to over-influence the training, it also tends to reduce overfitting.
+
+## What is Transfer Learning?
+
+Convolutional neural networks require large datasets and a lot of computional time to train. Some networks could take up to 2-3 weeks across multiple GPUs to train. Transfer learning is a very useful technique that tries to address both problems. Instead of training the network from scratch, transfer learning utilizes a trained model on a different dataset, and adapts it to the problem that we're trying to solve.
+
+There are 2 strategies for transfer learning:
+
+- Utilize the trained model as a fixed feature extractor: In this strategy, we remove the last fully connected layer from the trained model, we freeze the weights of the remaining layers, and we train a machine learning classifier on the output of the remaining layers.
+- Fine-tune the trained model: In this strategy, we fine tune the trained model on the new dataset by continuing the backpropagation. We can either fine-tune the whole network or freeze some of its layers.
+
+## What is one-hot vector?
+
+Neural network based models like vector inputs. We, therefore, need to convert the integers into vectors.  A naive way of converting integers into vectors is to convert them into one-hot vectors – these are vectors where all of the values are set to zero, except for one i.e. [0, 0, 0, …, 1, …, 0, 0].  The “one-hot” value is located at the array index which matches the unique integer representation of the word. Therefore, our input one-hot vector must be at least the size of the vocabulary in length – i.e. > 10,000 words.
+
+More info: https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/
