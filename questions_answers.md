@@ -103,3 +103,9 @@ There are 2 strategies for transfer learning:
 Neural network based models like vector inputs. We, therefore, need to convert the integers into vectors.  A naive way of converting integers into vectors is to convert them into one-hot vectors – these are vectors where all of the values are set to zero, except for one i.e. [0, 0, 0, …, 1, …, 0, 0].  The “one-hot” value is located at the array index which matches the unique integer representation of the word. Therefore, our input one-hot vector must be at least the size of the vocabulary in length – i.e. > 10,000 words.
 
 More info: https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/
+
+## How to calculate the number of hidden nodes?
+
+Use this formuila: ![hidden_nodes_formula](static/hidden_nodes_formula.png)
+
+Ref: https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw
